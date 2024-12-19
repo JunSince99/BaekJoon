@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "tuple": "cpp",
+        "queue": "cpp",
+        "ostream": "cpp"
+    }
+}
