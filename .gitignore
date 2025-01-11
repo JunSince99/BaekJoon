@@ -1,0 +1,15 @@
+# 실행 파일 무시
+*.exe
+a.out
+
+# Visual Studio Code 설정 폴더 무시
+.vscode/
+
+# Mac OS에서 생성되는 숨김 파일 무시
+.DS_Store
+
+# Windows에서 생성되는 시스템 파일 무시
+Thumbs.db
+
+# 기타 무시할 파일
+*.log
