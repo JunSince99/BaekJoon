@@ -1,6 +1,7 @@
 # 실행 파일 무시
 *.exe
 a.out
+*.[^.]
 
 # Visual Studio Code 설정 폴더 무시
 .vscode/
