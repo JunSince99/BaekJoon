@@ -1,18 +1,15 @@
 # 실행 파일 무시
-*.exe
-a.out
+*.exe   # Windows 실행 파일
+a.out   # Mac 기본 실행 파일
+*.[^.]* # 확장자가 없는 파일
 
-# Visual Studio Code 설정 폴더 무시
-.vscode/
+# 빌드 결과 폴더 무시
+build/
+bin/
 
-# Mac OS에서 생성되는 숨김 파일 무시
+# 시스템 파일 무시
 .DS_Store
-
-# Windows에서 생성되는 시스템 파일 무시
 Thumbs.db
 
-# 기타 무시할 파일
-*.log
-
-# 확장자가 없는(맥 실행파일) 파일 무시
-*.[^.]
+# VSCode 설정 무시
+.vscode/
