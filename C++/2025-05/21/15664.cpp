@@ -10,19 +10,15 @@ vector<int> numbers;
 bool visited[8] = {false};
 vector<int> temp;
 
-void dfs(int depth) {
+void dfs(int cur, int depth) {
     if(depth == M) {
         result.insert(temp);
         return;
     }
-    for(int i=0;i<N;i++) {
-        if(!visited[i]) {
-            visited[i] = true;
-            temp.push_back(numbers[i]);
-            dfs(depth+1);
-            temp.pop_back();
-            visited[i] = false;
-        }
+    for(int i=cur+1;i<N;i++) {
+        temp.push_back(numbers[i]);
+        dfs(i,depth+1);
+        temp.pop_back();
     }
 }
 
@@ -36,7 +32,7 @@ int main() {
         numbers.push_back(n);
     }
     sort(numbers.begin(), numbers.end());
-    dfs(0);
+    dfs(-1,0);
 
     for(vector<int> tmp : result) {
         for(int num : tmp) {

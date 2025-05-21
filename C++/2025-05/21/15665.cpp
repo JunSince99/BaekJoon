@@ -16,13 +16,9 @@ void dfs(int depth) {
         return;
     }
     for(int i=0;i<N;i++) {
-        if(!visited[i]) {
-            visited[i] = true;
-            temp.push_back(numbers[i]);
-            dfs(depth+1);
-            temp.pop_back();
-            visited[i] = false;
-        }
+        temp.push_back(numbers[i]);
+        dfs(depth+1);
+        temp.pop_back();
     }
 }
 
