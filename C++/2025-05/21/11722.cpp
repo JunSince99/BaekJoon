@@ -11,18 +11,17 @@ int main() {
     int N;
     cin >> N;
     vector<int> A(N);
-    vector<int> dp(N);
+    vector<int> dp(N,1);
+    int mdp = 1;
 
     for(int i=0;i<N;i++) {
         cin >> A[i];
-        dp[i] = A[i];
     }
-    int mdp = A[0];
 
-    for(int i=1;i<N;i++) {
-        for(int j=0;j<i;j++) {
-            if(A[j]<A[i]) {
-                dp[i] = max(dp[i],dp[j]+A[i]);
+    for(int i=N-2;0<=i;i--) {
+        for(int j=N-1;i<j;j--) {
+            if(A[i] > A[j]) {
+                dp[i] = max(dp[i], dp[j]+1);
             }
         }
         mdp = max(mdp, dp[i]);
