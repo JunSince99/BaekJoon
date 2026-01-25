@@ -4,9 +4,10 @@
 class Marine {
     int hp;
     int coord_x, coord_y;
-    int damage;
     int is_dead;
     char* name;
+
+    const int default_damage;
 
 public:
     Marine();
@@ -20,13 +21,7 @@ public:
 
     void show_status();
 };
-Marine::Marine() {
-    hp = 50;
-    coord_x = coord_y = 0;
-    damage = 5;
-    is_dead = false;
-    name = NULL;
-}
+Marine::Marine() : hp(50), coord_x(0), coord_y(0), default_damage(5), is_dead(false), name(NULL) {}
 Marine::Marine(int x, int y, const char* marine_name) {
     name = new char[strlen(marine_name) + 1];
     strcpy(name, marine_name);
@@ -34,17 +29,10 @@ Marine::Marine(int x, int y, const char* marine_name) {
     hp = 50;
     coord_x = x;
     coord_y = y;
-    damage = 5;
+    default_damage = 5;
     is_dead = false;
 }
-Marine::Marine(int x, int y) {
-    hp = 50;
-    coord_x = x;
-    coord_y = y;
-    damage = 5;
-    is_dead = false;
-    name = NULL;
-}
+Marine::Marine(int x, int y) : hp(50), coord_x(x), coord_y(y), default_damage(5), is_dead(false), name(NULL) {}
 int Marine::attack() { return damage; }
 void Marine::be_attacked(int damage_earn) {
     hp -= damage_earn;
